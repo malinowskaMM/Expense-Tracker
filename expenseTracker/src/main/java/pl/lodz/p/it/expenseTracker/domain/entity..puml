@@ -1,0 +1,96 @@
+@startuml
+skinparam linetype polyline
+skinparam linetype ortho
+
+class pl.lodz.p.it.expenseTracker.domain.entity.AccountGroupRole {
+- Long id
+- Account account
+- Group group
+- GroupRoleEnum role
+}
+class pl.lodz.p.it.expenseTracker.domain.entity.Income {
+}
+enum pl.lodz.p.it.expenseTracker.domain.enums.GroupRoleEnum {
++  ADMIN
++  USER
+- List<String> actions
+}
+class pl.lodz.p.it.expenseTracker.domain.entity.Account {
+- Long id
+- boolean isActive
+- boolean isArchived
+- boolean isEnabled
+- LocalDateTime registerDate
+- String language_
+- LoginEntity loginEntity
+- AccountRoleEnum role
+- String email
+- String password
+- List<AccountGroupRole> groupRoles
+- List<Transaction> transactions
+}
+class pl.lodz.p.it.expenseTracker.domain.entity.Group {
+- Long id
+- String name
+- List<AccountGroupRole> accountGroupRoles
+- List<Category> categories
+}
+class pl.lodz.p.it.expenseTracker.domain.entity.Category {
+- Long id
+- String name
+- String color
+- String description
+- Group group
+- List<Transaction> transactions
+}
+abstract class pl.lodz.p.it.expenseTracker.domain.entity.Transaction {
+- Long id
+- String name
+- Category category
+- Boolean isCyclic
+- Integer period
+- PeriodUnitEnum periodUnit
+- LocalDate startDate
+- LocalDate endDate
+- BigDecimal amount
+- String transactionType
+- Account account
+}
+enum pl.lodz.p.it.expenseTracker.domain.enums.PeriodUnitEnum {
++  DAY
++  MONTH
++  YEAR
+}
+class pl.lodz.p.it.expenseTracker.domain.entity.LoginEntity {
+- Account id
+- LocalDateTime lastValidLoginDate
+- LocalDateTime lastInvalidLoginDate
+- Integer invalidLoginCounter
+}
+enum pl.lodz.p.it.expenseTracker.domain.enums.AccountRoleEnum {
++  USER
++  ADMIN
+}
+class pl.lodz.p.it.expenseTracker.domain.entity.Expense {
+}
+abstract class pl.lodz.p.it.expenseTracker.domain.entity.AbstractEntity {
+- Long version
+}
+
+pl.lodz.p.it.expenseTracker.domain.entity.AbstractEntity <|--- pl.lodz.p.it.expenseTracker.domain.entity.AccountGroupRole
+pl.lodz.p.it.expenseTracker.domain.entity.AbstractEntity <|--- pl.lodz.p.it.expenseTracker.domain.entity.Account
+pl.lodz.p.it.expenseTracker.domain.entity.AbstractEntity <|--- pl.lodz.p.it.expenseTracker.domain.entity.Group
+pl.lodz.p.it.expenseTracker.domain.entity.AbstractEntity <|--- pl.lodz.p.it.expenseTracker.domain.entity.Category
+pl.lodz.p.it.expenseTracker.domain.entity.AbstractEntity <|--- pl.lodz.p.it.expenseTracker.domain.entity.Transaction
+pl.lodz.p.it.expenseTracker.domain.entity.Transaction <|-- pl.lodz.p.it.expenseTracker.domain.entity.Income
+pl.lodz.p.it.expenseTracker.domain.entity.Transaction <|-- pl.lodz.p.it.expenseTracker.domain.entity.Expense
+  pl.lodz.p.it.expenseTracker.domain.entity.Account o--up-- pl.lodz.p.it.expenseTracker.domain.enums.AccountRoleEnum : role
+  pl.lodz.p.it.expenseTracker.domain.entity.Account o--- pl.lodz.p.it.expenseTracker.domain.entity.LoginEntity: loginEntity
+  pl.lodz.p.it.expenseTracker.domain.entity.AccountGroupRole o-- pl.lodz.p.it.expenseTracker.domain.entity.Account : account
+  pl.lodz.p.it.expenseTracker.domain.entity.AccountGroupRole o-- pl.lodz.p.it.expenseTracker.domain.entity.Group : group
+  pl.lodz.p.it.expenseTracker.domain.entity.AccountGroupRole o--up-- pl.lodz.p.it.expenseTracker.domain.enums.GroupRoleEnum : role
+  pl.lodz.p.it.expenseTracker.domain.entity.Category o-- pl.lodz.p.it.expenseTracker.domain.entity.Group : group
+  pl.lodz.p.it.expenseTracker.domain.entity.Transaction o-- pl.lodz.p.it.expenseTracker.domain.entity.Account : account
+  pl.lodz.p.it.expenseTracker.domain.entity.Transaction o-- pl.lodz.p.it.expenseTracker.domain.entity.Category : category
+  pl.lodz.p.it.expenseTracker.domain.entity.Transaction o--up-- pl.lodz.p.it.expenseTracker.domain.enums.PeriodUnitEnum : periodUnit
+@enduml

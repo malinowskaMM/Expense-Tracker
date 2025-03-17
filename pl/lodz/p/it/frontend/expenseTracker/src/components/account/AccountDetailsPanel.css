@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+    grid-gap: 0px; /* Adjust the gap between columns as needed */
+    width: 100%; /* Ensure the container takes up the full width */
+    height: 100vh; /* Ensure the container takes up the full viewport height */
+  }
+  
+  .left-side {
+    background-color: #ffffff;
+  }
+  
+  .right-side {
+    background-color: rgb(255, 255, 255);
+  }

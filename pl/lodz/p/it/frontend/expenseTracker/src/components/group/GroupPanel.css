@@ -1,0 +1,44 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+    grid-gap: 0px; /* Adjust the gap between columns as needed */
+    width: 100%; /* Ensure the container takes up the full width */
+    height: 100vh; /* Ensure the container takes up the full viewport height */
+  }
+  
+  .left-side {
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  
+  .right-side {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+  }
+
+  .container-30-70 {
+    display: grid;
+    grid-template-columns: 3fr 7fr; /* Two columns with equal width */
+    grid-gap: 0px; /* Adjust the gap between columns as needed */
+    width: 100%; /* Ensure the container takes up the full width */
+    height: 100vh; /* Ensure the container takes up the full viewport height */
+  }
+
+  .left-side-30 {
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  
+  .right-side-70 {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: right;
+  }
+
+  .right-side-60 {
+    background-color: rgb(255, 255, 255);
+    padding-top: 4%;
+    padding-right: 10%;
+    text-align: right;
+  }
+  

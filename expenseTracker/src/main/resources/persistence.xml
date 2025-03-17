@@ -1,0 +1,68 @@
+<!--<?xml version="1.0" encoding="UTF-8" standalone="yes"?>-->
+<!--<persistence xmlns="https://jakarta.ee/xml/ns/persistence"-->
+<!--             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"-->
+<!--             version="3.0">-->
+<!--    <persistence-unit name="adminPU" transaction-type="JTA"> &lt;!&ndash;java transaction API &ndash;&gt;-->
+<!--        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> &lt;!&ndash;klasa implementująca interfejs javax.persistence. PersistenceProvider &ndash;&gt;-->
+<!--        <jta-data-source>java:app/jdbc/expenseTrackerAdmin</jta-data-source> &lt;!&ndash;zasób umożliwiający łączenie się i wykonywanie operacji w bazie danych &ndash;&gt;-->
+<!--        <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+<!--        <properties>-->
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>-->
+<!--            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>-->
+<!--            <property name="hibernate.transaction.jta.platform"-->
+<!--                      value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>-->
+<!--            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
+<!--            <property name="javax.persistence.sql-load-script-source" value="init.sql"/>-->
+<!--            <property name="hibernate.show_sql" value="true"/>-->
+<!--            <property name="hibernate.format_sql" value="true"/>-->
+<!--        </properties>-->
+<!--    </persistence-unit>-->
+
+<!--    &lt;!&ndash;w ramach jednej transakcji można używać tylko jednej jednostki składowania &ndash;&gt;-->
+<!--    <persistence-unit name="expenseTrackerAdminPU" transaction-type="JTA">-->
+<!--        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+<!--        <jta-data-source>java:app/jdbc/expenseTrackerManager</jta-data-source>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.AbstractEntity</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.Account</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.AccountGroupRole</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.AccountPrincipal</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.LoginEntity</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.Token</class>-->
+<!--        <exclude-unlisted-classes>true</exclude-unlisted-classes>-->
+<!--        <properties>-->
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>-->
+<!--            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>-->
+<!--            <property name="hibernate.transaction.jta.platform"-->
+<!--                      value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>-->
+<!--            <property name="hibernate.show_sql" value="true"/>-->
+<!--            <property name="hibernate.format_sql" value="true"/>-->
+<!--        </properties>-->
+<!--    </persistence-unit>-->
+
+<!--    <persistence-unit name="expenseTrackerManagerPU" transaction-type="JTA">-->
+<!--        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+<!--        <jta-data-source>java:app/jdbc/ssbd03mow</jta-data-source>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.AbstractEntity</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.Account</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.AccountGroupRole</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.AccountPrincipal</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.LoginEntity</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.Token</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.Category</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.Expense</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.Group</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.Income</class>-->
+<!--        <class>pl.lodz.p.it.expenseTracker.domain.entity.Transaction</class>-->
+<!--        <exclude-unlisted-classes>true</exclude-unlisted-classes>-->
+<!--        <properties>-->
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>-->
+<!--            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>-->
+<!--            <property name="hibernate.transaction.jta.platform"-->
+<!--                      value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>-->
+<!--            <property name="hibernate.show_sql" value="true"/>-->
+<!--            <property name="hibernate.format_sql" value="true"/>-->
+<!--        </properties>-->
+<!--    </persistence-unit>-->
+
+<!--</persistence>-->

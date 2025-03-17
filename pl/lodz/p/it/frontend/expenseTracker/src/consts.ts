@@ -1,0 +1,10 @@
+export const NONE = 'NONE';
+export const API_URL = 'http://localhost:8080/api';
+export const API_CALLBACK_ROUTE = 'http://localhost:8080/activate-account';
+export const API_CALLBACK_ROUTE_FORGOT_PASSWORD = 'http://localhost:8080/set-password';
+export const API_CALLBACK_ROUTE_ADMIN_REGISTER = 'http://localhost:8080/set-admin-password';
+export const API_CALLBACK_ROUTE_RESET_PASSWORD = 'http://localhost:8080/set-password';
+export const API_CALLBACK_ROUTE_CHANGE_EMAIL = 'http://localhost:8080/success-change-email';
+export const ADMIN = 'ADMIN';
+export const USER = 'USER';
+export const GUEST = 'GUEST';

@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+  }
+  
+  .green-column {
+    flex: 1; /* 25% szerokości */
+    background-color: #c5f2dc; /* Kolor tła zielony */
+    border-radius: 10px; /* Zaokrąglenie brzegów */
+    padding: 20px; /* Odstęp wewnętrzny dla lepszego wyglądu */
+  }
+  
+  .content-column {
+    flex: 3; /* 75% szerokości */
+    /* Dodaj inne stylowanie dla drugiej kolumny */
+  }
+
+  .date-picker-container {
+    display: flex;
+    justify-content: center;
+}
+
+.square-container {
+    display: flex;
+    padding-bottom: 7%;
+  }
+  
+  .square {
+    width: 50%;
+    max-width: 50%;
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
+
+  .rectangle1 {
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+  }
+
+  .rectangle3 {
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+  }
+  
+  .rectangle {
+    width: 90%;
+    max-width: 90%; /* Reszta prostokąta zajmuje całą dostępną szerokość */
+    background-color: hsl(0, 0%, 100%);
+  }
+  
